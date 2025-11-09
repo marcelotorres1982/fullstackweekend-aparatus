@@ -51,7 +51,7 @@ model Booking {
 }
 
 model User {
-  id            String    @id
+  id            String    @id @default(uuid())
   name          String
   email         String
   emailVerified Boolean   @default(false)
@@ -67,7 +67,7 @@ model User {
 }
 
 model Session {
-  id        String   @id
+  id        String   @id @default(uuid())
   expiresAt DateTime
   token     String
   createdAt DateTime @default(now())
@@ -82,7 +82,7 @@ model Session {
 }
 
 model Account {
-  id                    String    @id
+  id                    String    @id @default(uuid())
   accountId             String
   providerId            String
   userId                String
@@ -101,7 +101,7 @@ model Account {
 }
 
 model Verification {
-  id         String   @id
+  id         String   @id @default(uuid())
   identifier String
   value      String
   expiresAt  DateTime

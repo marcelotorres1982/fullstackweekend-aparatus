@@ -96,6 +96,9 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.2.2(@types/react@19.2.2)
+      cline:
+        specifier: ^1.0.5
+        version: 1.0.5
       eslint:
         specifier: ^9
         version: 9.39.1(jiti@2.6.1)
@@ -1464,6 +1467,20 @@ packages:
 
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+
+  cline@1.0.5:
+    resolution: {integrity: sha512-XhM+rkLbwTdLuxBfy0g8txTDzPnH38EPjQWlF3mV/7LC2RDUnrpLrIu2o7q3QAh4wiOXYxeqqz9Tb+rUT4YpZA==}
+    engines: {node: '>=20.0.0'}
+    cpu: [x64, arm64]
+    os: [darwin, linux]
+    hasBin: true
+    bundledDependencies:
+      - '@grpc/grpc-js'
+      - '@grpc/reflection'
+      - better-sqlite3
+      - grpc-health-check
+      - open
+      - vscode-uri
 
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
@@ -4186,6 +4203,8 @@ snapshots:
       clsx: 2.1.1
 
   client-only@0.0.1: {}
+
+  cline@1.0.5: {}
 
   clsx@2.1.1: {}
 
