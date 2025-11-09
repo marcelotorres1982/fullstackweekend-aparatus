@@ -1,19 +1,39 @@
+"use client";
+
 import { SearchIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 
 const SearchInput = () => {
+  const router = useRouter();
+  const [search, setSearch] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    if (!search.trim()) return;
+    router.push(`/barbershops?search=${encodeURIComponent(search)}`);
+  };
+
   return (
-    <div className="flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2">
       <Input
         type="text"
         placeholder="Pesquise serviços ou barbearias"
         className="border-border rounded-full"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <Button variant="default" size="icon" className="rounded-full">
+      <Button
+        type="submit"
+        variant="default"
+        size="icon"
+        className="rounded-full"
+      >
         <SearchIcon />
       </Button>
-    </div>
+    </form>
   );
 };
 
